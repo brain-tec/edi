@@ -15,6 +15,8 @@ setuptools.setup(
         'odoo13-addon-base_ubl_payment',
         'odoo13-addon-purchase_order_ubl',
         'odoo13-addon-purchase_stock_ubl',
+        'odoo13-addon-sale_order_import',
+        'odoo13-addon-sale_order_import_ubl',
         'odoo13-addon-sale_order_ubl',
     ],
     classifiers=[
