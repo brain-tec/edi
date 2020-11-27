@@ -16,7 +16,7 @@ class EDIExchangeType(models.Model):
     _description = "EDI Exchange Type"
 
     backend_id = fields.Many2one(
-        string="EDI backend", comodel_name="edi.backend", ondelete="restrict",
+        string="EDI backend", comodel_name="edi.backend", ondelete="set null",
     )
     backend_type_id = fields.Many2one(
         string="EDI Backend type",
@@ -77,4 +77,4 @@ class EDIExchangeType(models.Model):
     def _get_record_name(self, record):
         if hasattr(record.record, "_get_edi_exchange_record_name"):
             return record.record._get_edi_exchange_record_name(record, self)
-        return slugify(record.record.name)
+        return slugify(record.record.display_name)

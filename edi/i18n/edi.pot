@@ -34,6 +34,11 @@ msgid "ACK received on"
 msgstr ""
 
 #. module: edi
+#: model:ir.model,name:edi.model_edi_exchange_consumer_mixin
+msgid "Abstract record where exchange records can be assigned"
+msgstr ""
+
+#. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_type__ack_code
 msgid "Ack Code"
 msgstr ""
@@ -91,6 +96,7 @@ msgid "Attachment Count"
 msgstr ""
 
 #. module: edi
+#: model:ir.model.fields,field_description:edi.field_edi_exchange_record__backend_id
 #: model_terms:ir.ui.view,arch_db:edi.edi_exchange_type_view_search
 msgid "Backend"
 msgstr ""
@@ -154,6 +160,7 @@ msgstr ""
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_backend__display_name
 #: model:ir.model.fields,field_description:edi.field_edi_backend_type__display_name
+#: model:ir.model.fields,field_description:edi.field_edi_exchange_consumer_mixin__display_name
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__display_name
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_type__display_name
 msgid "Display Name"
@@ -212,7 +219,6 @@ msgid "EDI Exchange type"
 msgstr ""
 
 #. module: edi
-#: model:ir.model.fields,field_description:edi.field_edi_exchange_record__backend_id
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_type__backend_id
 msgid "EDI backend"
 msgstr ""
@@ -256,6 +262,16 @@ msgstr ""
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__exchange_identification_code
 msgid "Exchange Identification Code"
+msgstr ""
+
+#. module: edi
+#: model:ir.model.fields,field_description:edi.field_edi_exchange_consumer_mixin__exchange_record_ids
+msgid "Exchange Record"
+msgstr ""
+
+#. module: edi
+#: model:ir.model.fields,field_description:edi.field_edi_exchange_consumer_mixin__exchange_record_count
+msgid "Exchange Record Count"
 msgstr ""
 
 #. module: edi
@@ -322,6 +338,7 @@ msgstr ""
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_backend__id
 #: model:ir.model.fields,field_description:edi.field_edi_backend_type__id
+#: model:ir.model.fields,field_description:edi.field_edi_exchange_consumer_mixin__id
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record__id
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_type__id
 msgid "ID"
@@ -357,6 +374,7 @@ msgstr ""
 #. module: edi
 #: model:ir.model.fields,field_description:edi.field_edi_backend____last_update
 #: model:ir.model.fields,field_description:edi.field_edi_backend_type____last_update
+#: model:ir.model.fields,field_description:edi.field_edi_exchange_consumer_mixin____last_update
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_record____last_update
 #: model:ir.model.fields,field_description:edi.field_edi_exchange_type____last_update
 msgid "Last Modified on"
