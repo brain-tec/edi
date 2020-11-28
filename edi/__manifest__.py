@@ -5,13 +5,14 @@
 {
     "name": "Base EDI Backend",
     "summary": """Base module to define EDI backends""",
-    "version": "13.0.1.4.0",
+    "version": "13.0.1.5.0",
     "development_status": "Alpha",
     "license": "AGPL-3",
     "author": "ACSONE,Odoo Community Association (OCA)",
     "maintainers": ["simahawk"],
     "depends": ["base_edi", "component", "mail"],
     "data": [
+        "data/cron.xml",
         "security/ir_model_access.xml",
         "views/edi_backend_views.xml",
         "views/edi_backend_type_views.xml",
