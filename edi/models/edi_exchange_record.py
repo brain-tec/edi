@@ -17,8 +17,9 @@ class EDIExchangeRecord(models.Model):
     _description = "EDI exchange Record"
     _order = "exchanged_on desc"
 
-    # TODO: add unique identifier using a sequence
     name = fields.Char(compute="_compute_name")
+    identifier = fields.Char(required=True, index=True, readonly=True)
+    external_identifier = fields.Char(index=True, readonly=True)
     type_id = fields.Many2one(
         string="EDI Exchange type",
         comodel_name="edi.exchange.type",
@@ -46,11 +47,6 @@ class EDIExchangeRecord(models.Model):
         compute="_compute_exchanged_on",
         store=True,
         readonly=False,
-    )
-    # TODO: use sequence and make it unique
-    exchange_identification_code = fields.Char(
-        track_visibility="onchange",
-        help="Identification of the EDI, useful to search and join other documents",
     )
     ack_file = fields.Binary(attachment=True)
     ack_filename = fields.Char(
@@ -83,6 +79,15 @@ class EDIExchangeRecord(models.Model):
     )
     exchange_error = fields.Text(string="Exchange error", readonly=True)
 
+    _sql_constraints = [
+        ("identifier_uniq", "unique(identifier)", "The identifier must be unique."),
+        (
+            "external_identifier_uniq",
+            "unique(external_identifier)",
+            "The external_identifier must be unique.",
+        ),
+    ]
+
     @api.depends("type_id.code", "model", "res_id")
     def _compute_name(self):
         for rec in self:
@@ -101,7 +106,7 @@ class EDIExchangeRecord(models.Model):
     @api.depends("edi_exchange_state")
     def _compute_exchanged_on(self):
         for rec in self:
-            if rec.edi_exchange_state in ["output_sent"]:
+            if rec.edi_exchange_state in ("input_received", "output_sent"):
                 rec.exchanged_on = fields.Datetime.now()
 
     @api.constrains("edi_exchange_state")
@@ -142,6 +147,14 @@ class EDIExchangeRecord(models.Model):
             result.append((rec.id, name))
         return result
 
+    @api.model
+    def create(self, vals):
+        vals["identifier"] = self._get_identifier()
+        return super().create(vals)
+
+    def _get_identifier(self):
+        return self.env["ir.sequence"].next_by_code("edi.exchange")
+
     @api.constrains("backend_id", "type_id")
     def _constrain_backend(self):
         for rec in self:
@@ -176,3 +189,7 @@ class EDIExchangeRecord(models.Model):
     def action_exchange_send(self):
         self.ensure_one()
         return self.backend_id.exchange_send(self)
+
+    def action_exchange_process(self):
+        self.ensure_one()
+        return self.backend_id.exchange_process(self)
