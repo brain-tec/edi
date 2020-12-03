@@ -48,16 +48,6 @@ class EDIExchangeRecord(models.Model):
         store=True,
         readonly=False,
     )
-    ack_file = fields.Binary(attachment=True)
-    ack_filename = fields.Char(
-        compute="_compute_exchange_filename", readonly=False, store=True
-    )
-    ack_received_on = fields.Datetime(
-        string="ACK received on",
-        readonly=True,
-        compute="_compute_ack_received_on",
-        store=True,
-    )
     edi_exchange_state = fields.Selection(
         string="Exchange state",
         readonly=True,
@@ -78,7 +68,25 @@ class EDIExchangeRecord(models.Model):
         ],
     )
     exchange_error = fields.Text(string="Exchange error", readonly=True)
-    ack_needed = fields.Boolean(related="type_id.ack_needed")
+    # Relations w/ other records
+    parent_id = fields.Many2one(
+        comodel_name="edi.exchange.record",
+        help="Original exchange which originated this record",
+    )
+    related_exchange_ids = fields.One2many(
+        string="Related records",
+        comodel_name="edi.exchange.record",
+        inverse_name="parent_id",
+    )
+    # TODO: shall we add a constrain on the direction?
+    # In theory if the record is outgoing the ack should be incoming and vice versa.
+    ack_exchange_id = fields.Many2one(
+        comodel_name="edi.exchange.record",
+        help="Ack for this exchange",
+        compute="_compute_ack_exchange_id",
+        store=True,
+    )
+    ack_received_on = fields.Datetime(related="ack_exchange_id.exchanged_on")
 
     _sql_constraints = [
         ("identifier_uniq", "unique(identifier)", "The identifier must be unique."),
@@ -96,15 +104,13 @@ class EDIExchangeRecord(models.Model):
                 rec.type_id.name, rec.record.name if rec.model else "Unrelated"
             )
 
-    @api.depends("model", "type_id", "type_id.ack_needed")
+    @api.depends("model", "type_id")
     def _compute_exchange_filename(self):
         for rec in self:
             if not rec.type_id:
                 continue
             if not rec.exchange_filename:
                 rec.exchange_filename = rec.type_id._make_exchange_filename(rec)
-            if rec.type_id.ack_needed and not rec.ack_filename:
-                rec.ack_filename = rec.type_id._make_exchange_filename(rec, ack=True)
 
     @api.depends("edi_exchange_state")
     def _compute_exchanged_on(self):
@@ -121,6 +127,21 @@ class EDIExchangeRecord(models.Model):
                 raise exceptions.ValidationError(
                     _("Exchange state must respect direction!")
                 )
+
+    @api.depends("related_exchange_ids.type_id")
+    def _compute_ack_exchange_id(self):
+        for rec in self:
+            rec.ack_exchange_id = rec._get_ack_record()
+
+    def _get_ack_record(self):
+        if not self.type_id.ack_type_id:
+            return None
+        return self.related_exchange_ids.filtered(
+            lambda x: x.type_id == self.type_id.ack_type_id
+        )
+
+    def needs_ack(self):
+        return self.type_id.ack_type_id and not self.ack_exchange_id
 
     @property
     def record(self):
@@ -187,6 +208,7 @@ class EDIExchangeRecord(models.Model):
             "process_ko": _("File %s processed with errors") % self.exchange_filename,
             "ack_received": _("ACK file received."),
             "ack_missing": _("ACK file is required for this exchange but not found."),
+            "ack_received_error": _("ACK file received but contains errors."),
         }
 
     def _exchange_status_message(self, key):
@@ -205,3 +227,54 @@ class EDIExchangeRecord(models.Model):
         if not self.model or not self.res_id:
             return {}
         return self.record.get_formview_action()
+
+    def _notify_related_record(self, message, level="info"):
+        """Post notification on the original record."""
+        if not hasattr(self.record, "message_post_with_view"):
+            return
+        self.record.message_post_with_view(
+            "edi.message_edi_exchange_link",
+            values={
+                "backend": self.backend_id,
+                "exchange_record": self,
+                "message": message,
+                "level": level,
+            },
+            subtype_id=self.env.ref("mail.mt_note").id,
+        )
+
+    def _trigger_edi_event_make_name(self, name, suffix=None):
+        return "on_edi_exchange_{name}{suffix}".format(
+            name=name, suffix=("_" + suffix) if suffix else "",
+        )
+
+    def _trigger_edi_event(self, name, suffix=None):
+        """Trigger a component event linked to this backend and edi exchange."""
+        name = self._trigger_edi_event_make_name(name, suffix=suffix)
+        self._event(name).notify(self)
+
+    def _notify_done(self):
+        self._notify_related_record(self._exchange_status_message("process_ok"))
+        self._trigger_edi_event("done")
+
+    def _notify_error(self, message_key):
+        self._notify_related_record(
+            self._exchange_status_message(message_key), level="error",
+        )
+        self._trigger_edi_event("error")
+
+    def _notify_ack_received(self):
+        self._notify_related_record(self._exchange_status_message("ack_received"))
+        self._trigger_edi_event("done", suffix="ack_received")
+
+    def _notify_ack_missing(self):
+        self._notify_related_record(
+            self._exchange_status_message("ack_missing"), level="warning",
+        )
+        self._trigger_edi_event("done", suffix="ack_missing")
+
+    def _notify_ack_received_error(self):
+        self._notify_related_record(
+            self._exchange_status_message("ack_received_error"),
+        )
+        self._trigger_edi_event("done", suffix="ack_received_error")

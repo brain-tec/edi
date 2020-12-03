@@ -40,10 +40,10 @@ class TestEDIStorageBase(EDIBackendCommonComponentTestCase):
         with open(cls.fakepath_error, "w+b") as fakefile:
             fakefile.write(b"ERROR XYZ: line 2 broken on bla bla")
 
-        cls.checker = cls.backend._get_component(
+        cls.checker = cls.backend._find_component(
             ["edi.storage.check"], work_ctx={"exchange_record": cls.record}
         )
-        cls.sender = cls.backend._get_component(
+        cls.sender = cls.backend._find_component(
             ["edi.storage.send"], work_ctx={"exchange_record": cls.record}
         )
 
@@ -53,7 +53,9 @@ class TestEDIStorageBase(EDIBackendCommonComponentTestCase):
 
     def _filename(self, record=None, ack=False):
         record = record or self.record
-        return record.exchange_filename if not ack else record.ack_filename
+        if ack:
+            record.type_id.ack_type_id._make_exchange_filename(record)
+        return record.exchange_filename
 
     def _file_fullpath(self, state, record=None, ack=False):
         record = record or self.record
