@@ -3,6 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 import base64
+from collections import defaultdict
 
 from odoo import _, api, exceptions, fields, models
 
@@ -53,7 +54,9 @@ class EDIExchangeRecord(models.Model):
         readonly=True,
         default="new",
         selection=[
+            # Common states
             ("new", "New"),
+            ("validate_error", "Error on validation"),
             # output exchange states
             ("output_pending", "Waiting to be sent"),
             ("output_error_on_send", "error on send"),
@@ -87,7 +90,9 @@ class EDIExchangeRecord(models.Model):
         compute="_compute_ack_exchange_id",
         store=True,
     )
-    ack_received_on = fields.Datetime(related="ack_exchange_id.exchanged_on")
+    ack_received_on = fields.Datetime(
+        string="ACK received on", related="ack_exchange_id.exchanged_on"
+    )
 
     _sql_constraints = [
         ("identifier_uniq", "unique(identifier)", "The identifier must be unique."),
@@ -122,7 +127,7 @@ class EDIExchangeRecord(models.Model):
     @api.constrains("edi_exchange_state")
     def _constrain_edi_exchange_state(self):
         for rec in self:
-            if rec.edi_exchange_state == "new":
+            if rec.edi_exchange_state in ("new", "validate_error"):
                 continue
             if not rec.edi_exchange_state.startswith(rec.direction):
                 raise exceptions.ValidationError(
@@ -207,9 +212,12 @@ class EDIExchangeRecord(models.Model):
             ),
             "process_ok": _("File %s processed successfully ") % self.exchange_filename,
             "process_ko": _("File %s processed with errors") % self.exchange_filename,
+            "receive_ok": _("File %s received successfully ") % self.exchange_filename,
+            "receive_ko": _("File %s not received") % self.exchange_filename,
             "ack_received": _("ACK file received."),
             "ack_missing": _("ACK file is required for this exchange but not found."),
             "ack_received_error": _("ACK file received but contains errors."),
+            "validate_ko": _("File %s not valid") % self.exchange_filename,
         }
 
     def _exchange_status_message(self, key):
@@ -279,3 +287,105 @@ class EDIExchangeRecord(models.Model):
             self._exchange_status_message("ack_received_error"),
         )
         self._trigger_edi_event("done", suffix="ack_received_error")
+
+    @api.model
+    def _search(
+        self,
+        args,
+        offset=0,
+        limit=None,
+        order=None,
+        count=False,
+        access_rights_uid=None,
+    ):
+        ids = super()._search(
+            args,
+            offset=offset,
+            limit=limit,
+            order=order,
+            count=False,
+            access_rights_uid=access_rights_uid,
+        )
+        if self.env.is_superuser():
+            # rules do not apply for the superuser
+            return len(ids) if count else ids
+
+        if not ids:
+            return 0 if count else []
+        orig_ids = ids
+        ids = set(ids)
+        result = []
+        model_data = defaultdict(
+            lambda: defaultdict(set)
+        )  # {res_model: {res_id: set(ids)}}
+        for sub_ids in self._cr.split_for_in_conditions(ids):
+            self._cr.execute(
+                """
+                            SELECT id, res_id, model
+                            FROM "%s"
+                            WHERE id = ANY (%%(ids)s)"""
+                % self._table,
+                dict(ids=list(sub_ids)),
+            )
+            for eid, res_id, model in self._cr.fetchall():
+                if not model:
+                    continue
+                model_data[model][res_id].add(eid)
+
+        for model, targets in model_data.items():
+            if not self.env[model].check_access_rights("read", False):
+                continue
+            target_ids = list(targets)
+            allowed = (
+                self.env[model]
+                .with_context(active_test=False)
+                ._search([("id", "in", target_ids)])
+            )
+            for target_id in allowed:
+                result += list(targets[target_id])
+        if len(orig_ids) == limit and len(result) < len(orig_ids):
+            result.extend(
+                self._search(
+                    args,
+                    offset=offset + len(orig_ids),
+                    limit=limit,
+                    order=order,
+                    count=count,
+                    access_rights_uid=access_rights_uid,
+                )[: limit - len(result)]
+            )
+        return len(result) if count else list(result)
+
+    def read(self, fields=None, load="_classic_read"):
+        """ Override to explicitely call check_access_rule, that is not called
+            by the ORM. It instead directly fetches ir.rules and apply them. """
+        self.check_access_rule("read")
+        return super().read(fields=fields, load=load)
+
+    def check_access_rule(self, operation):
+        """In order to check if we can access a record, we are checking if we can access
+        the related document"""
+        super(EDIExchangeRecord, self).check_access_rule(operation)
+        if self.env.is_superuser():
+            return
+        for exchange_record in self:
+            if not exchange_record.record:
+                continue
+            if hasattr(exchange_record.record, "get_edi_access"):
+                check_operation = exchange_record.record.get_edi_access(
+                    [exchange_record.res_id], operation
+                )
+            else:
+                check_operation = self.env[
+                    "edi.exchange.consumer.mixin"
+                ].get_edi_access(
+                    [exchange_record.res_id],
+                    operation,
+                    model_name=exchange_record.model,
+                )
+            exchange_record.record.check_access_rights(check_operation)
+            exchange_record.record.check_access_rule(check_operation)
+
+    def write(self, vals):
+        self.check_access_rule("write")
+        return super().write(vals)
