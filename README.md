@@ -23,7 +23,7 @@ addon | version | summary
 [account_invoice_export](account_invoice_export/) | 13.0.1.1.0 | Account Invoice Export
 [account_invoice_facturx](account_invoice_facturx/) | 13.0.1.1.0 | Generate Factur-X/ZUGFeRD customer invoices
 [account_invoice_facturx_py3o](account_invoice_facturx_py3o/) | 13.0.1.0.0 | Generate Factur-X invoices with Py3o reporting engine
-[account_invoice_ubl](account_invoice_ubl/) | 13.0.1.0.4 | Generate UBL XML file for customer invoices/refunds
+[account_invoice_ubl](account_invoice_ubl/) | 13.0.1.0.5 | Generate UBL XML file for customer invoices/refunds
 [account_invoice_ubl_email_attachment](account_invoice_ubl_email_attachment/) | 13.0.1.1.0 | Automatically adds the UBL file to the email.
 [base_business_document_import](base_business_document_import/) | 13.0.2.0.0 | Provides technical tools to import sale orders or supplier invoices
 [base_ebill_payment_contract](base_ebill_payment_contract/) | 13.0.1.0.0 | Base for managing e-billing contracts
@@ -34,7 +34,7 @@ addon | version | summary
 [edi](edi/) | 13.0.1.19.0 | Define backends, exchange types, exchange records, basic automation and views for handling EDI exchanges.
 [edi_account](edi_account/) | 13.0.1.0.2 | Define EDI Configuration for Account Moves
 [edi_exchange_template](edi_exchange_template/) | 13.0.1.7.0 | Allows definition of exchanges via templates.
-[edi_storage](edi_storage/) | 13.0.1.7.0 | Base module to allow exchanging files via storage backend (eg: SFTP).
+[edi_storage](edi_storage/) | 13.0.1.7.1 | Base module to allow exchanging files via storage backend (eg: SFTP).
 [edi_voxel](edi_voxel/) | 13.0.1.0.1 | Base module for connecting with Voxel
 [edi_voxel_account_invoice](edi_voxel_account_invoice/) | 13.0.1.0.2 | Sends account invoices to Voxel.
 [edi_voxel_sale_order_import](edi_voxel_sale_order_import/) | 13.0.1.0.3 | Import sale order from Voxel.
