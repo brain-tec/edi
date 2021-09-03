@@ -8,6 +8,9 @@ setuptools.setup(
     description="Meta package for oca-edi Odoo addons",
     version=version,
     install_requires=[
+        'odoo14-addon-account_einvoice_generate',
+        'odoo14-addon-account_invoice_download',
+        'odoo14-addon-account_invoice_download_ovh',
         'odoo14-addon-account_invoice_import',
         'odoo14-addon-account_invoice_import_facturx',
         'odoo14-addon-account_invoice_import_invoice2data',
