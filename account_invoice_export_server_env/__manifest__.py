@@ -3,11 +3,11 @@
 
 {
     "name": "Server environment for Account Invoice Export",
-    "version": "13.0.1.0.1",
+    "version": "13.0.1.0.2",
     "author": "Camptocamp,Odoo Community Association (OCA)",
     "license": "AGPL-3",
     "category": "Tools",
     "depends": ["server_environment", "account_invoice_export"],
-    "website": "https://www.camptocamp.com",
+    "website": "https://github.com/OCA/edi",
     "installable": True,
 }

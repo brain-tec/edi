@@ -5,10 +5,11 @@
 {
     "name": "EDI Exchange Template",
     "summary": """Allows definition of exchanges via templates.""",
-    "version": "13.0.1.7.0",
+    "version": "13.0.1.7.1",
     "development_status": "Alpha",
     "license": "LGPL-3",
     "author": "ACSONE,Odoo Community Association (OCA)",
+    "website": "https://github.com/OCA/edi",
     "maintainers": ["simahawk"],
     "depends": ["edi", "component"],
     "data": [

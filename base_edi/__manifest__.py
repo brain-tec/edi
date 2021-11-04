@@ -5,10 +5,11 @@
 {
     "name": "Base EDI",
     "summary": """Base module to aggregate EDI features.""",
-    "version": "13.0.1.0.1",
+    "version": "13.0.1.0.2",
     "development_status": "Alpha",
     "license": "LGPL-3",
     "author": "ACSONE,Odoo Community Association (OCA)",
+    "website": "https://github.com/OCA/edi",
     "maintainers": ["simahawk"],
     "depends": ["base"],
     "data": [
