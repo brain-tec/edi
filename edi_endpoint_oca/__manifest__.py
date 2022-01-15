@@ -1,4 +1,4 @@
-# Copyright 2021 Camptcamp SA
+# Copyright 2021 Camptocamp SA
 # @author: Simone Orsi <simone.orsi@camptocamp.com>
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
@@ -7,7 +7,7 @@
     "summary": """
     Base module allowing configuration of custom endpoints for EDI framework.
     """,
-    "version": "14.0.1.2.0",
+    "version": "14.0.1.2.1",
     "development_status": "Alpha",
     "license": "LGPL-3",
     "website": "https://github.com/OCA/edi",

@@ -1,10 +1,10 @@
-# Copyright 2021 Camptcamp SA
+# Copyright 2021 Camptocamp SA
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 {
     "name": "Endpoint",
     "summary": """Provide custom endpoint machinery.""",
-    "version": "14.0.1.1.0",
+    "version": "14.0.1.1.1",
     "license": "LGPL-3",
     "development_status": "Alpha",
     "author": "Camptocamp,Odoo Community Association (OCA)",
