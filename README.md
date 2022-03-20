@@ -28,7 +28,7 @@ addon | version | maintainers | summary
 [account_invoice_facturx_py3o](account_invoice_facturx_py3o/) | 14.0.1.0.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Generate Factur-X invoices with Py3o reporting engine
 [account_invoice_import](account_invoice_import/) | 14.0.2.0.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Import supplier invoices/refunds as PDF or XML files
 [account_invoice_import_facturx](account_invoice_import_facturx/) | 14.0.1.0.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Import Factur-X/ZUGFeRD supplier invoices/refunds
-[account_invoice_import_invoice2data](account_invoice_import_invoice2data/) | 14.0.1.0.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Import supplier invoices using the invoice2data lib
+[account_invoice_import_invoice2data](account_invoice_import_invoice2data/) | 14.0.1.0.1 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Import supplier invoices using the invoice2data lib
 [account_invoice_import_simple_pdf](account_invoice_import_simple_pdf/) | 14.0.2.0.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Import simple PDF vendor bills
 [account_invoice_import_ubl](account_invoice_import_ubl/) | 14.0.1.0.1 |  | Import UBL XML supplier invoices/refunds
 [account_invoice_ubl](account_invoice_ubl/) | 14.0.1.0.0 |  | Generate UBL XML file for customer invoices/refunds
@@ -43,11 +43,11 @@ addon | version | maintainers | summary
 [edi_backend_partner_oca](edi_backend_partner_oca/) | 14.0.1.0.1 | [![LoisRForgeFlow](https://github.com/LoisRForgeFlow.png?size=30px)](https://github.com/LoisRForgeFlow) | add the a partner field in EDI backend
 [edi_endpoint_oca](edi_endpoint_oca/) | 14.0.1.2.2 |  | Base module allowing configuration of custom endpoints for EDI framework.
 [edi_exchange_template_oca](edi_exchange_template_oca/) | 14.0.1.0.1 | [![simahawk](https://github.com/simahawk.png?size=30px)](https://github.com/simahawk) | Allows definition of exchanges via templates.
-[edi_oca](edi_oca/) | 14.0.1.7.1 | [![simahawk](https://github.com/simahawk.png?size=30px)](https://github.com/simahawk) [![etobella](https://github.com/etobella.png?size=30px)](https://github.com/etobella) | Define backends, exchange types, exchange records, basic automation and views for handling EDI exchanges.
+[edi_oca](edi_oca/) | 14.0.1.8.0 | [![simahawk](https://github.com/simahawk.png?size=30px)](https://github.com/simahawk) [![etobella](https://github.com/etobella.png?size=30px)](https://github.com/etobella) | Define backends, exchange types, exchange records, basic automation and views for handling EDI exchanges.
 [edi_sale_order_import](edi_sale_order_import/) | 14.0.1.0.1 | [![simahawk](https://github.com/simahawk.png?size=30px)](https://github.com/simahawk) | Plug sale_order_import into EDI machinery.
 [edi_sale_order_import_ubl](edi_sale_order_import_ubl/) | 14.0.1.0.0 | [![simahawk](https://github.com/simahawk.png?size=30px)](https://github.com/simahawk) | Plug sale_order_import_ubl into EDI machinery.
 [edi_sale_order_import_ubl_endpoint](edi_sale_order_import_ubl_endpoint/) | 14.0.1.0.0 | [![simahawk](https://github.com/simahawk.png?size=30px)](https://github.com/simahawk) | Provide a default endpoint to import SO in UBL format.
-[edi_storage_oca](edi_storage_oca/) | 14.0.1.4.0 |  | Base module to allow exchanging files via storage backend (eg: SFTP).
+[edi_storage_oca](edi_storage_oca/) | 14.0.1.5.0 |  | Base module to allow exchanging files via storage backend (eg: SFTP).
 [edi_ubl_oca](edi_ubl_oca/) | 14.0.1.0.0 | [![simahawk](https://github.com/simahawk.png?size=30px)](https://github.com/simahawk) | Define EDI backend type for UBL.
 [edi_webservice_oca](edi_webservice_oca/) | 14.0.1.2.0 |  | Defines webservice integration from EDI Exchange records
 [endpoint](endpoint/) | 14.0.1.3.0 | [![simahawk](https://github.com/simahawk.png?size=30px)](https://github.com/simahawk) | Provide custom endpoint machinery.
