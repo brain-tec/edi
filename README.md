@@ -40,14 +40,14 @@ addon | version | maintainers | summary
 [edi_exchange_template](edi_exchange_template/) | 13.0.1.7.2 | [![simahawk](https://github.com/simahawk.png?size=30px)](https://github.com/simahawk) | Allows definition of exchanges via templates.
 [edi_purchase_oca](edi_purchase_oca/) | 13.0.1.0.0 |  | Define EDI Configuration for Purchase Orders
 [edi_stock_oca](edi_stock_oca/) | 13.0.1.0.1 |  | Define EDI Configuration for Stock
-[edi_storage](edi_storage/) | 13.0.1.8.1 |  | Base module to allow exchanging files via storage backend (eg: SFTP).
+[edi_storage](edi_storage/) | 13.0.1.8.2 |  | Base module to allow exchanging files via storage backend (eg: SFTP).
 [edi_voxel](edi_voxel/) | 13.0.1.0.3 |  | Base module for connecting with Voxel
 [edi_voxel_account_invoice](edi_voxel_account_invoice/) | 13.0.1.1.3 |  | Sends account invoices to Voxel.
 [edi_voxel_sale_order_import](edi_voxel_sale_order_import/) | 13.0.1.0.5 |  | Import sale order from Voxel.
 [edi_voxel_sale_secondary_unit](edi_voxel_sale_secondary_unit/) | 13.0.1.0.0 | [![ernestotejeda](https://github.com/ernestotejeda.png?size=30px)](https://github.com/ernestotejeda) | Map Voxel UoM to Sale Secondary UoM and Use Them
 [edi_voxel_secondary_unit](edi_voxel_secondary_unit/) | 13.0.1.0.0 | [![ernestotejeda](https://github.com/ernestotejeda.png?size=30px)](https://github.com/ernestotejeda) | Add Voxel UoM code to Secondary UoM model
 [edi_voxel_stock_picking](edi_voxel_stock_picking/) | 13.0.1.0.5 |  | Sends stock picking report to Voxel.
-[edi_voxel_stock_picking_secondary_unit](edi_voxel_stock_picking_secondary_unit/) | 13.0.1.0.0 | [![ernestotejeda](https://github.com/ernestotejeda.png?size=30px)](https://github.com/ernestotejeda) | Export Secondary UoMs Voxel Code in picking Voxel documents
+[edi_voxel_stock_picking_secondary_unit](edi_voxel_stock_picking_secondary_unit/) | 13.0.1.0.1 | [![ernestotejeda](https://github.com/ernestotejeda.png?size=30px)](https://github.com/ernestotejeda) | Export Secondary UoMs Voxel Code in picking Voxel documents
 [edi_webservice](edi_webservice/) | 13.0.1.2.1 |  | Defines webservice integration from EDI Exchange records
 [edi_xml](edi_xml/) | 13.0.1.2.2 |  | Base module for EDI exchange using XML files.
 [partner_identification_import](partner_identification_import/) | 13.0.2.0.1 |  | Provides partner matching on extra ID
