@@ -3,11 +3,11 @@
 
 {
     "name": "Sale Order UBL Import",
-    "version": "14.0.1.2.0",
+    "version": "14.0.1.3.0",
     "category": "Sales Management",
     "license": "AGPL-3",
     "summary": "Import UBL XML sale order files",
-    "author": "Akretion,Odoo Community Association (OCA)",
+    "author": "Akretion,Camptocamp,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/edi",
     "depends": ["sale_order_import", "base_ubl"],
     "demo": ["demo/demo_data.xml"],
