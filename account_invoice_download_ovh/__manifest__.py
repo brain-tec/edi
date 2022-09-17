@@ -4,7 +4,7 @@
 
 {
     "name": "Account Invoice Download OVH",
-    "version": "14.0.1.0.1",
+    "version": "14.0.1.1.0",
     "category": "Accounting",
     "license": "AGPL-3",
     "summary": "Get OVH Invoice via the API",
@@ -12,7 +12,7 @@
     "maintainers": ["alexis-via"],
     "website": "https://github.com/OCA/edi",
     "depends": ["account_invoice_download"],
-    "external_dependencies": {"python": ["requests", "ovh"]},
+    "external_dependencies": {"python": ["ovh"]},
     "data": [
         "wizard/ovh_api_credentials_view.xml",
         "views/account_invoice_download_config.xml",
