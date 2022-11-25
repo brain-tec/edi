@@ -41,6 +41,7 @@ addon | version | maintainers | summary
 [base_facturx](base_facturx/) | 14.0.1.0.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Base module for Factur-X/ZUGFeRD
 [base_ubl](base_ubl/) | 14.0.1.8.0 |  | Base module for Universal Business Language (UBL)
 [base_ubl_payment](base_ubl_payment/) | 14.0.1.0.0 |  | Payment-related code for Universal Business Language (UBL)
+[edi_account_invoice_import](edi_account_invoice_import/) | 14.0.1.1.0 | [![LoisRForgeFlow](https://github.com/LoisRForgeFlow.png?size=30px)](https://github.com/LoisRForgeFlow) | Plug account_invoice_import into EDI machinery.
 [edi_account_oca](edi_account_oca/) | 14.0.1.1.1 |  | Define EDI Configuration for Account Moves
 [edi_backend_partner_oca](edi_backend_partner_oca/) | 14.0.1.0.1 | [![LoisRForgeFlow](https://github.com/LoisRForgeFlow.png?size=30px)](https://github.com/LoisRForgeFlow) | add the a partner field in EDI backend
 [edi_endpoint_oca](edi_endpoint_oca/) | 14.0.1.3.0 |  | Base module allowing configuration of custom endpoints for EDI framework.
@@ -58,6 +59,7 @@ addon | version | maintainers | summary
 [edi_xml_oca](edi_xml_oca/) | 14.0.1.1.0 | [![simahawk](https://github.com/simahawk.png?size=30px)](https://github.com/simahawk) | Base module for EDI exchange using XML files.
 [partner_identification_import](partner_identification_import/) | 14.0.1.0.1 |  | Provides partner matching on extra ID
 [pdf_helper](pdf_helper/) | 14.0.1.2.0 | [![simahawk](https://github.com/simahawk.png?size=30px)](https://github.com/simahawk) [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Provides helpers to work w/ PDFs
+[product_import](product_import/) | 14.0.1.0.0 |  | Import product catalogues
 [purchase_order_ubl](purchase_order_ubl/) | 14.0.1.0.1 |  | Embed UBL XML file inside the PDF purchase order
 [purchase_stock_ubl](purchase_stock_ubl/) | 14.0.1.0.0 |  | Glue module for Purchase Order UBL and Stock/Inventory
 [sale_order_customer_free_ref](sale_order_customer_free_ref/) | 14.0.1.0.0 |  | Splits the Customer Reference on sale orders into two fields. An Id and a Free reference. The existing field is transformed into a computed one.
