@@ -5,13 +5,13 @@
     "name": "Pdf2data Import",
     "summary": """
         Module that allows to import data from a pdf""",
-    "version": "14.0.1.0.0",
+    "version": "14.0.1.0.1",
     "license": "LGPL-3",
     "author": "CreuBlanca,Odoo Community Association (OCA)",
     "website": "https://github.com/OCA/edi",
     "depends": ["edi_oca"],
     "external_dependencies": {
-        "python": ["dateparser==1.1.1"],
+        "python": ["dateparser"],
         "deb": ["poppler-utils"],
     },
     "maintainers": ["etobella"],
