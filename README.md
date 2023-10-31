@@ -37,7 +37,7 @@ addon | version | maintainers | summary
 [account_invoice_ubl](account_invoice_ubl/) | 14.0.1.0.1 |  | Generate UBL XML file for customer invoices/refunds
 [account_invoice_ubl_email_attachment](account_invoice_ubl_email_attachment/) | 14.0.1.0.0 |  | Automatically adds the UBL file to the email.
 [account_invoice_ubl_peppol](account_invoice_ubl_peppol/) | 14.0.1.0.0 |  | Generate invoices in PEPPOL 3.0 BIS dialect
-[base_business_document_import](base_business_document_import/) | 14.0.3.1.2 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Provides technical tools to import sale orders or supplier invoices
+[base_business_document_import](base_business_document_import/) | 14.0.3.2.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Provides technical tools to import sale orders or supplier invoices
 [base_business_document_import_phone](base_business_document_import_phone/) | 14.0.1.0.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Use phone numbers to match partners upon import of business documents
 [base_ebill_payment_contract](base_ebill_payment_contract/) | 14.0.1.1.0 | [![TDu](https://github.com/TDu.png?size=30px)](https://github.com/TDu) | Base for managing e-billing contracts
 [base_edi](base_edi/) | 14.0.1.0.0 | [![simahawk](https://github.com/simahawk.png?size=30px)](https://github.com/simahawk) | Base module to aggregate EDI features.
@@ -50,7 +50,7 @@ addon | version | maintainers | summary
 [edi_endpoint_oca](edi_endpoint_oca/) | 14.0.1.5.0 |  | Base module allowing configuration of custom endpoints for EDI framework.
 [edi_exchange_template_oca](edi_exchange_template_oca/) | 14.0.1.5.1 | [![simahawk](https://github.com/simahawk.png?size=30px)](https://github.com/simahawk) | Allows definition of exchanges via templates.
 [edi_exchange_template_party_data](edi_exchange_template_party_data/) | 14.0.1.0.1 | [![simahawk](https://github.com/simahawk.png?size=30px)](https://github.com/simahawk) | Glue module betweeb edi_exchange_template and edi_party_data
-[edi_oca](edi_oca/) | 14.0.1.20.7 | [![simahawk](https://github.com/simahawk.png?size=30px)](https://github.com/simahawk) [![etobella](https://github.com/etobella.png?size=30px)](https://github.com/etobella) | Define backends, exchange types, exchange records, basic automation and views for handling EDI exchanges.
+[edi_oca](edi_oca/) | 14.0.1.20.8 | [![simahawk](https://github.com/simahawk.png?size=30px)](https://github.com/simahawk) [![etobella](https://github.com/etobella.png?size=30px)](https://github.com/etobella) | Define backends, exchange types, exchange records, basic automation and views for handling EDI exchanges.
 [edi_party_data_oca](edi_party_data_oca/) | 14.0.1.1.0 | [![simahawk](https://github.com/simahawk.png?size=30px)](https://github.com/simahawk) | Allow to configure and retrieve party information for EDI exchanges.
 [edi_pdf2data_oca](edi_pdf2data_oca/) | 14.0.1.0.1 | [![etobella](https://github.com/etobella.png?size=30px)](https://github.com/etobella) | Module that allows to import data from a pdf
 [edi_purchase_oca](edi_purchase_oca/) | 14.0.1.0.0 |  | Define EDI Configuration for Purchase Orders
