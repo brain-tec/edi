@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* base_business_document_import_phone
+# 	* account_invoice_facturx_py3o
 #
 msgid ""
 msgstr ""
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.17\n"
 
-#. module: base_business_document_import_phone
-#: model:ir.model,name:base_business_document_import_phone.model_business_document_import
-msgid "Common methods to import business documents"
-msgstr "Metodi comuni per l'importazione di documenti di lavoro"
+#. module: account_invoice_facturx_py3o
+#: model:ir.model,name:account_invoice_facturx_py3o.model_py3o_report
+msgid "Report Py30"
+msgstr "Resoconto Py3o"
