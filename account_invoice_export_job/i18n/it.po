@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* base_edi
+# 	* account_invoice_export_job
 #
 msgid ""
 msgstr ""
@@ -16,18 +16,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 5.6.2\n"
 
-#. module: base_edi
-#: model:ir.module.category,name:base_edi.module_category_edi
-#: model:ir.ui.menu,name:base_edi.menu_edi_root
-msgid "EDI"
-msgstr "EDI"
-
-#. module: base_edi
-#: model:res.groups,name:base_edi.group_edi_manager
-msgid "EDI Manager"
-msgstr "Gestore EDI"
-
-#. module: base_edi
-#: model:res.groups,name:base_edi.group_edi_user
-msgid "EDI User"
-msgstr "Utente EDI"
+#. module: account_invoice_export_job
+#: model:ir.model,name:account_invoice_export_job.model_account_move
+msgid "Journal Entry"
+msgstr "Registrazione contabile"
