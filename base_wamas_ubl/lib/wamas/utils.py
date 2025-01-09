@@ -299,9 +299,9 @@ def generate_wamas_dict(dict_item, grammar, **kwargs):  # noqa: C901
             if isinstance(ubl_path, list):
                 lst_val = []
                 for _item in ubl_path:
-                    lst_val.append(dict_item.get(_item, ""))
+                    lst_val.append(dict_item.get(_item) or "")
                 if lst_val:
-                    val = " ".join(lst_val)
+                    val = " ".join(lst_val).strip()
             elif isinstance(ubl_path, dict):
                 for _key in ubl_path:
                     if dict_item.get(_key, False):
@@ -408,7 +408,7 @@ def fw2dict(line, grammar, telegram_type):
             dp = fdef["dp"]
             val = float(b[:-dp] + "." + b[-dp:])
         else:
-            val = escape(b.rstrip())
+            val = str(escape(b.rstrip()))
         res[fname] = val
     _logger.debug(pformat(res))
     return res

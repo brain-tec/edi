@@ -7,6 +7,9 @@ from ..wamas2wamas import wamas2wamas
 
 
 class TestWamas2wamas(unittest.TestCase):
+
+    maxDiff = None
+
     def _test(self, filename):
         with file_open(
             file_path("tests/samples/wamas2wamas_input_%s.wamas" % filename)
