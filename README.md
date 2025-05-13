@@ -25,7 +25,7 @@ addon | version | maintainers | summary
 [account_invoice_facturx](account_invoice_facturx/) | 15.0.1.0.1 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Generate Factur-X/ZUGFeRD customer invoices
 [base_edi](base_edi/) | 15.0.1.1.0 | [![simahawk](https://github.com/simahawk.png?size=30px)](https://github.com/simahawk) | Base module to aggregate EDI features.
 [base_facturx](base_facturx/) | 15.0.1.0.0 | [![alexis-via](https://github.com/alexis-via.png?size=30px)](https://github.com/alexis-via) | Base module for Factur-X/ZUGFeRD
-[base_import_pdf_by_template](base_import_pdf_by_template/) | 15.0.1.1.0 | [![victoralmau](https://github.com/victoralmau.png?size=30px)](https://github.com/victoralmau) | Base Import Pdf by Template
+[base_import_pdf_by_template](base_import_pdf_by_template/) | 15.0.1.2.0 | [![victoralmau](https://github.com/victoralmau.png?size=30px)](https://github.com/victoralmau) | Base Import Pdf by Template
 [base_ubl](base_ubl/) | 15.0.1.0.1 |  | Base module for Universal Business Language (UBL)
 [edi_account_oca](edi_account_oca/) | 15.0.1.0.1 | [![etobella](https://github.com/etobella.png?size=30px)](https://github.com/etobella) | Define EDI Configuration for Account Moves
 [edi_backend_partner_oca](edi_backend_partner_oca/) | 15.0.1.0.0 | [![LoisRForgeFlow](https://github.com/LoisRForgeFlow.png?size=30px)](https://github.com/LoisRForgeFlow) | Add the a partner field to EDI backend
@@ -33,7 +33,7 @@ addon | version | maintainers | summary
 [edi_oca](edi_oca/) | 15.0.1.7.3 | [![simahawk](https://github.com/simahawk.png?size=30px)](https://github.com/simahawk) [![etobella](https://github.com/etobella.png?size=30px)](https://github.com/etobella) | Define backends, exchange types, exchange records, basic automation and views for handling EDI exchanges.
 [edi_stock_oca](edi_stock_oca/) | 15.0.1.0.0 |  | Define EDI Configuration for Stock
 [edi_storage_oca](edi_storage_oca/) | 15.0.1.3.0 |  | Base module to allow exchanging files via storage backend (eg: SFTP).
-[edi_voxel_account_invoice_oca](edi_voxel_account_invoice_oca/) | 15.0.1.0.2 |  | Sends account invoices to Voxel.
+[edi_voxel_account_invoice_oca](edi_voxel_account_invoice_oca/) | 15.0.1.0.3 |  | Sends account invoices to Voxel.
 [edi_voxel_oca](edi_voxel_oca/) | 15.0.1.0.1 |  | Base module for connecting with Voxel
 [edi_voxel_sale_order_import_oca](edi_voxel_sale_order_import_oca/) | 15.0.1.0.1 |  | Import sale order from Voxel.
 [edi_voxel_sale_secondary_unit_oca](edi_voxel_sale_secondary_unit_oca/) | 15.0.1.0.0 | [![ernestotejeda](https://github.com/ernestotejeda.png?size=30px)](https://github.com/ernestotejeda) | Map Voxel UoM to Sale Secondary UoM and Use Them
