@@ -1,9 +1,10 @@
 [project]
 name = "odoo-addons-oca-edi"
-version = "18.0.20250423.0"
+version = "18.0.20250515.0"
 dependencies = [
     "odoo-addon-base_edi==18.0.*",
     "odoo-addon-edi_voxel_oca==18.0.*",
+    "odoo-addon-edi_voxel_secondary_unit_oca==18.0.*",
     "odoo-addon-sale_order_customer_free_ref==18.0.*",
 ]
 classifiers=[
