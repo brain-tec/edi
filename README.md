@@ -35,11 +35,11 @@ addon | version | maintainers | summary
 [base_business_document_import](base_business_document_import/) | 12.0.1.0.1 |  | Provides technical tools to import sale orders or supplier invoices
 [base_business_document_import_phone](base_business_document_import_phone/) | 12.0.1.0.0 |  | Use phone numbers to match partners upon import of business documents
 [base_business_document_import_stock](base_business_document_import_stock/) | 12.0.1.0.1 |  | Match incoterms upon import of business documents
-[base_edi](base_edi/) | 12.0.1.0.1 | [![simahawk](https://github.com/simahawk.png?size=30px)](https://github.com/simahawk) | Base module to aggregate EDI features.
+[base_edi](base_edi/) | 12.0.1.0.1 | <a href='https://github.com/simahawk'><img src='https://github.com/simahawk.png' width='32' height='32' style='border-radius:50%;' alt='simahawk'/></a> | Base module to aggregate EDI features.
 [base_facturx](base_facturx/) | 12.0.1.0.0 |  | Base module for Factur-X/ZUGFeRD
 [base_ubl](base_ubl/) | 12.0.1.1.2 |  | Base module for Universal Business Language (UBL)
 [base_ubl_payment](base_ubl_payment/) | 12.0.1.0.1 |  | Payment-related code for Universal Business Language (UBL)
-[edi_oca](edi_oca/) | 12.0.1.22.6 | [![simahawk](https://github.com/simahawk.png?size=30px)](https://github.com/simahawk) [![etobella](https://github.com/etobella.png?size=30px)](https://github.com/etobella) | Define backends, exchange types, exchange records, basic automation and views for handling EDI exchanges.
+[edi_oca](edi_oca/) | 12.0.1.22.6 | <a href='https://github.com/simahawk'><img src='https://github.com/simahawk.png' width='32' height='32' style='border-radius:50%;' alt='simahawk'/></a> <a href='https://github.com/etobella'><img src='https://github.com/etobella.png' width='32' height='32' style='border-radius:50%;' alt='etobella'/></a> | Define backends, exchange types, exchange records, basic automation and views for handling EDI exchanges.
 [purchase_order_ubl](purchase_order_ubl/) | 12.0.1.0.1 |  | Embed UBL XML file inside the PDF purchase order
 [purchase_stock_ubl](purchase_stock_ubl/) | 12.0.1.0.1 |  | Glue module for Purchase Order UBL and Stock/Inventory
 [sale_order_import](sale_order_import/) | 12.0.1.0.1 |  | Import RFQ or sale orders from files
