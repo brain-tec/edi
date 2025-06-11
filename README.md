@@ -23,10 +23,12 @@ addon | version | maintainers | summary
 --- | --- | --- | ---
 [account_einvoice_generate](account_einvoice_generate/) | 18.0.1.0.0 | <a href='https://github.com/alexis-via'><img src='https://github.com/alexis-via.png' width='32' height='32' style='border-radius:50%;' alt='alexis-via'/></a> | Technical module to generate PDF invoices with embedded XML file
 [account_invoice_facturx](account_invoice_facturx/) | 18.0.1.0.0 | <a href='https://github.com/alexis-via'><img src='https://github.com/alexis-via.png' width='32' height='32' style='border-radius:50%;' alt='alexis-via'/></a> | Generate Factur-X/ZUGFeRD customer invoices
+[base_business_document_import](base_business_document_import/) | 18.0.1.0.0 | <a href='https://github.com/alexis-via'><img src='https://github.com/alexis-via.png' width='32' height='32' style='border-radius:50%;' alt='alexis-via'/></a> | Provides technical tools to import sale orders or supplier invoices
 [base_edi](base_edi/) | 18.0.1.0.2 | <a href='https://github.com/simahawk'><img src='https://github.com/simahawk.png' width='32' height='32' style='border-radius:50%;' alt='simahawk'/></a> | Base module to aggregate EDI features.
 [base_facturx](base_facturx/) | 18.0.1.0.0 | <a href='https://github.com/alexis-via'><img src='https://github.com/alexis-via.png' width='32' height='32' style='border-radius:50%;' alt='alexis-via'/></a> | Base module for Factur-X/ZUGFeRD
 [edi_voxel_oca](edi_voxel_oca/) | 18.0.1.0.0 |  | Base module for connecting with Voxel
 [edi_voxel_secondary_unit_oca](edi_voxel_secondary_unit_oca/) | 18.0.1.0.0 | <a href='https://github.com/ernestotejeda'><img src='https://github.com/ernestotejeda.png' width='32' height='32' style='border-radius:50%;' alt='ernestotejeda'/></a> | Add Voxel UoM code to Secondary UoM model
+[edi_voxel_stock_picking_oca](edi_voxel_stock_picking_oca/) | 18.0.1.0.0 |  | Sends stock picking report to Voxel.
 [sale_order_customer_free_ref](sale_order_customer_free_ref/) | 18.0.1.0.0 |  | Splits the Customer Reference on sale orders into two fields. An Id and a Free reference. The existing field is transformed into a computed one.
 
 [//]: # (end addons)
