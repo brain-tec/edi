@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 14.0\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2025-05-20 16:26+0000\n"
+"PO-Revision-Date: 2025-06-17 09:26+0000\n"
 "Last-Translator: mymage <stefano.consolaro@mymage.it>\n"
 "Language-Team: none\n"
 "Language: it\n"
@@ -20,29 +20,29 @@ msgstr ""
 #: model:product.product,description_sale:sale_order_import_ubl.product_beeswax
 #: model:product.template,description_sale:sale_order_import_ubl.product_beeswax_product_template
 msgid "Acme beeswax"
-msgstr ""
+msgstr "Cera d'api Acme"
 
 #. module: sale_order_import_ubl
 #: model:product.product,name:sale_order_import_ubl.product_beeswax
 #: model:product.template,name:sale_order_import_ubl.product_beeswax_product_template
 msgid "Beeswax"
-msgstr ""
+msgstr "Cera d'api"
 
 #. module: sale_order_import_ubl
 #: model:product.pricelist,name:sale_order_import_ubl.dkk_pricelist
 msgid "DKK pricelist"
-msgstr ""
+msgstr "Listino DKK"
 
 #. module: sale_order_import_ubl
 #: model:ir.model.fields,field_description:sale_order_import_ubl.field_sale_order_import__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nome visualizzato"
 
 #. module: sale_order_import_ubl
 #: model:product.product,name:sale_order_import_ubl.product_red_paint
 #: model:product.template,name:sale_order_import_ubl.product_red_paint_product_template
 msgid "Falu Rödfärg"
-msgstr ""
+msgstr "Falu Rödfärg"
 
 #. module: sale_order_import_ubl
 #: model:ir.model.fields,field_description:sale_order_import_ubl.field_sale_order_import__id
@@ -52,49 +52,49 @@ msgstr "ID"
 #. module: sale_order_import_ubl
 #: model:product.pricelist,name:sale_order_import_ubl.gbp_pricelist
 msgid "IYT pricelist"
-msgstr ""
+msgstr "Listino IYT"
 
 #. module: sale_order_import_ubl
 #: model:ir.model.fields,field_description:sale_order_import_ubl.field_sale_order_import____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Ultima modifica il"
 
 #. module: sale_order_import_ubl
 #: model:product.product,name:sale_order_import_ubl.product_pencil
 #: model:product.template,name:sale_order_import_ubl.product_pencil_product_template
 msgid "Pensel 20 mm"
-msgstr ""
+msgstr "Pennello 20 mm"
 
 #. module: sale_order_import_ubl
 #: model:product.product,description_sale:sale_order_import_ubl.product_red_paint
 #: model:product.template,description_sale:sale_order_import_ubl.product_red_paint_product_template
 msgid "Red paint"
-msgstr ""
+msgstr "Vernice rossa"
 
 #. module: sale_order_import_ubl
 #: model:product.pricelist,name:sale_order_import_ubl.sek_pricelist
 msgid "SEK pricelist"
-msgstr ""
+msgstr "Listino SEK"
 
 #. module: sale_order_import_ubl
 #: model:ir.model,name:sale_order_import_ubl.model_sale_order_import
 msgid "Sale Order Import from Files"
-msgstr ""
+msgstr "Importazione ordine di vendita da file"
 
 #. module: sale_order_import_ubl
 #: model:product.product,uom_name:sale_order_import_ubl.product_pencil
 #: model:product.template,uom_name:sale_order_import_ubl.product_pencil_product_template
 msgid "Units"
-msgstr ""
+msgstr "Unità"
 
 #. module: sale_order_import_ubl
 #: model:product.product,description_sale:sale_order_import_ubl.product_pencil
 #: model:product.template,description_sale:sale_order_import_ubl.product_pencil_product_template
 msgid "Very good pencils for red paint"
-msgstr ""
+msgstr "Un ottimo pennello per la vernice rossa"
 
 #. module: sale_order_import_ubl
 #: model:product.product,uom_name:sale_order_import_ubl.product_beeswax
 #: model:product.template,uom_name:sale_order_import_ubl.product_beeswax_product_template
 msgid "kg"
-msgstr ""
+msgstr "kg"
