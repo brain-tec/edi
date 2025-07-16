@@ -35,7 +35,7 @@ addon | version | maintainers | summary
 [partner_identification_import](partner_identification_import/) | 18.0.1.0.0 |  | Provides partner matching on extra ID
 [sale_order_customer_free_ref](sale_order_customer_free_ref/) | 18.0.1.0.0 |  | Splits the Customer Reference on sale orders into two fields. An Id and a Free reference. The existing field is transformed into a computed one.
 [sale_order_import](sale_order_import/) | 18.0.1.0.1 |  | Import RFQ or sale orders from files
-[sale_order_import_ubl](sale_order_import_ubl/) | 18.0.1.0.0 |  | Import UBL XML sale order files
+[sale_order_import_ubl](sale_order_import_ubl/) | 18.0.1.0.1 |  | Import UBL XML sale order files
 [sale_order_import_ubl_line_customer_ref](sale_order_import_ubl_line_customer_ref/) | 18.0.1.0.0 |  | Extract specific customer reference for each order line
 
 [//]: # (end addons)
