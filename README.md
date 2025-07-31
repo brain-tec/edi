@@ -26,6 +26,7 @@ addon | version | maintainers | summary
 [account_invoice_export_server_env](account_invoice_export_server_env/) | 18.0.1.0.0 |  | Server environment for Account Invoice Export
 [account_invoice_facturx](account_invoice_facturx/) | 18.0.1.0.0 | <a href='https://github.com/alexis-via'><img src='https://github.com/alexis-via.png' width='32' height='32' style='border-radius:50%;' alt='alexis-via'/></a> | Generate Factur-X/ZUGFeRD customer invoices
 [base_business_document_import](base_business_document_import/) | 18.0.1.0.1 | <a href='https://github.com/alexis-via'><img src='https://github.com/alexis-via.png' width='32' height='32' style='border-radius:50%;' alt='alexis-via'/></a> | Provides technical tools to import sale orders or supplier invoices
+[base_ebill_payment_contract](base_ebill_payment_contract/) | 18.0.1.0.0 | <a href='https://github.com/TDu'><img src='https://github.com/TDu.png' width='32' height='32' style='border-radius:50%;' alt='TDu'/></a> | Base for managing e-billing contracts
 [base_edi](base_edi/) | 18.0.1.0.2 | <a href='https://github.com/simahawk'><img src='https://github.com/simahawk.png' width='32' height='32' style='border-radius:50%;' alt='simahawk'/></a> | Base module to aggregate EDI features.
 [base_facturx](base_facturx/) | 18.0.1.0.0 | <a href='https://github.com/alexis-via'><img src='https://github.com/alexis-via.png' width='32' height='32' style='border-radius:50%;' alt='alexis-via'/></a> | Base module for Factur-X/ZUGFeRD
 [base_ubl](base_ubl/) | 18.0.1.0.0 |  | Base module for Universal Business Language (UBL)
@@ -34,6 +35,7 @@ addon | version | maintainers | summary
 [partner_identification_import](partner_identification_import/) | 18.0.1.0.0 |  | Provides partner matching on extra ID
 [sale_order_customer_free_ref](sale_order_customer_free_ref/) | 18.0.1.0.0 |  | Splits the Customer Reference on sale orders into two fields. An Id and a Free reference. The existing field is transformed into a computed one.
 [sale_order_import](sale_order_import/) | 18.0.1.0.1 |  | Import RFQ or sale orders from files
+[sale_order_import_packaging](sale_order_import_packaging/) | 18.0.1.0.0 |  | Import the packaging on the sale order line
 [sale_order_import_ubl](sale_order_import_ubl/) | 18.0.1.0.1 |  | Import UBL XML sale order files
 [sale_order_import_ubl_customer_free_ref](sale_order_import_ubl_customer_free_ref/) | 18.0.1.0.0 |  | Extract CustomerReference from sale UBL
 [sale_order_import_ubl_line_customer_ref](sale_order_import_ubl_line_customer_ref/) | 18.0.1.0.0 |  | Extract specific customer reference for each order line
