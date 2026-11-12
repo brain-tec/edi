@@ -219,7 +219,7 @@ class TestRsxTemplates(AccountTestInvoicingCommon):
 
 
 class TestSpsBackendConfig(TransactionCase):
-    def test_test_mode_resolves_sps_test_dirs(self):
+    def test_test_mode_resolves_test_dirs(self):
         """The shipped SPS backend reads testout/testin in test mode."""
         backend = self.env.ref("edi_spscommerce.edi_backend_sps")
         self.assertTrue(backend.test_mode_supported)
